@@ -10,7 +10,10 @@
 
 <body>
   <div ng-controller="booksCtrl">
-    <div ng-repeat="(key, value) in books">
+    <div>
+      <input ng-model="search">
+    </div>
+    <div ng-repeat="(key, value) in books | filter:search">
       <h2>{{value.name}}</h2>
       isbn:
       <span>{{value.isbn}}</span>
