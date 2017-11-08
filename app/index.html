@@ -6,6 +6,7 @@
   <title>My HTML File {{i}}</title>
   <script src="../node_modules/angular/angular.min.js"></script>
   <script src="app.js"></script>
+  <script src="filters.js"></script>
 </head>
 
 <body>
@@ -13,7 +14,7 @@
     <div>
       <input ng-model="search">
     </div>
-    <div ng-repeat="(key, value) in books | filter:search">
+    <div ng-repeat="(key, value) in books| filter:search | capitalize">
       <h2>{{value.name}}</h2>
       isbn:
       <span>{{value.isbn}}</span>
